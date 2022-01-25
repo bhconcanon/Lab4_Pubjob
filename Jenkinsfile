@@ -20,7 +20,7 @@ spec:
         stage('Sending notification') {
             steps {
                 echo 'Sending data for branch to consuming job'
-                publishEvent jsonEvent('{"labs":"lab4","unitTestEnable":"true"}')
+                publishEvent jsonEvent('{"ref":"refs/heads/main"}')
 
             }
         }
