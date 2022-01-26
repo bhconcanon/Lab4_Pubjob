@@ -15,12 +15,7 @@ spec:
     '''
         defaultContainer 'build'
         }
-    }
-    
-    triggers {
-        eventTrigger jmespathQuery("environment=='prod'")
-    }
-  
+    } 
     stages {
         stage('Example') {
             steps {
@@ -46,6 +41,9 @@ spec:
                 always {
                     junit 'target/surefire-reports/*.xml'
                 }
+                echo 'Sending data for branch to consuming job'
+                publishEvent jsonEvent('{"ref":"ref/head/main"}')
+
             }
         }
         stage ('deploy') {
