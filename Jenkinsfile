@@ -20,7 +20,7 @@ spec:
         stage('Sending notification') {
             steps {
                 echo 'Sending data for branch to consuming job'
-                publishEvent branch: jsonEvent('{"branch":"main"}')
+                publishEvent event: jsonEvent('{"branch":"main"}')
             }
         }
     }
