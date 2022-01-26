@@ -20,7 +20,7 @@ spec:
         stage('Sending notification') {
             steps {
                 echo 'Sending data for branch to consuming job'
-                publishEvent event: jsonEvent('{"lab":"5", "branch":[{"develop", "test", "release", "main"}] "test":{["enabled", "disabled"]} "deploy":{["enabled", "disabled"}]')
+                publishEvent event: jsonEvent('{"lab":"5", "branch":[{"develop", "test", "release", "main"}], "test":[{"enabled", "disabled"}], "deploy":{["enabled", "disabled"]}}')
             }
         }
     }
